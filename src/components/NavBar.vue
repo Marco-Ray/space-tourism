@@ -88,7 +88,7 @@ function toggleMobileMenu() {
 
 .deco {
   position: absolute;
-  width: calc(55% - 64px - 48px - 64px);
+  width: 44%;
   left: calc(64px + 48px + 64px);
   height: 1px;
   background-color: #979797;
@@ -128,15 +128,18 @@ function toggleMobileMenu() {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
+  .deco {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
   #nav-bar {
     margin-top: 0;
   }
   .logo {
     margin: 0 40px;
-  }
-  .deco {
-    display: none;
   }
   .nav-container {
     display: flex;
@@ -144,14 +147,16 @@ function toggleMobileMenu() {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   #nav-bar {
-    margin: 24px;
+    padding: 24px;
+    width: calc(100vw - 48px);
   }
   .nav-container {
     min-width: 0;
     background-color: transparent;
     backdrop-filter: none;
+    justify-content: end;
     .nav-state {
       display: none;
     }

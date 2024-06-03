@@ -41,11 +41,11 @@ const props = defineProps({
   border-bottom: 3px solid $white;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .nav-state {
     justify-content: center;
     align-items: start;
-    width: calc(100% - 29px);
+    width: calc(100% - 3px);
     height: 19px;
     border-bottom: none;
     border-right: 3px solid transparent;
