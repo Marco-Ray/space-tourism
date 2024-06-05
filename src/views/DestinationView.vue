@@ -15,16 +15,33 @@
           </div>
           <destination-tab :tabList="tabList" class="tab__container">
             <template #MOON>
-              MOON
+              <div class="heading-L">MOON</div>
+              <div class="body">
+                See our planet as you’ve never seen it before. A perfect
+                relaxing trip away to help regain perspective and come back
+                refreshed. While you’re there, take in some history by visiting
+                the Luna 2 and Apollo 11 landing sites.
+              </div>
+              <div class="divider"></div>
+              <div style="display: flex;">
+                <div style="display: flex; flex-direction: column;">
+                  <div class="subheading-S">AVG. DISTANCE</div>
+                  <div class="subheading-L">384,400 km</div>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <div class="subheading-S">Est. travel time</div>
+                  <div class="subheading-L">3 days</div>
+                </div>
+              </div>
             </template>
             <template #MARS>
-              MARS
+              <div class="heading-L">MARS</div>
             </template>
             <template #EUROPA>
-              EUROPA
+              <div class="heading-L">EUROPA</div>
             </template>
             <template #TITAN>
-              TITAN
+              <div class="heading-L">TITAN</div>
             </template>
           </destination-tab>
         </div>
@@ -43,14 +60,22 @@ const tabList = ["MOON", "MARS", "EUROPA", "TITAN"];
 <style lang="scss" scoped>
 #destination {
   background-image: url("@/assets/destination/background-destination-desktop.jpg");
+  @include respondTo("tablet") {
+    background-image: url("@/assets/destination/background-destination-tablet.jpg");
+  }
+  @include respondTo("phone") {
+    background-image: url("@/assets/destination/background-destination-mobile.jpg");
+  }
 }
 
 .destination__container {
   .destination__content {
     flex-direction: column;
     align-items: start;
-    width: calc(100% - 165px * 2);
-    height: calc(100% - 48px * 2);
+    max-width: 1110px;
+    max-height: 792px;
+    // width: calc(100% - 165px * 2);
+    // height: calc(100% - 48px * 2);
     padding: 48px 165px;
     gap: 24px;
   }
@@ -74,15 +99,8 @@ const tabList = ["MOON", "MARS", "EUROPA", "TITAN"];
   }
 }
 
-@media screen and (max-width: 850px) {
-  #destination {
-    background-image: url("@/assets/destination/background-destination-tablet.jpg");
-  }
-}
-
-@media screen and (max-width: 750px) {
-  #destination {
-    background-image: url("@/assets/destination/background-destination-mobile.jpg");
-  }
+.divider {
+  background-color: rgba($white, 25%);
+  height: 1px;
 }
 </style>

@@ -28,6 +28,12 @@ const activeTabList = computed(() => {
 
 function toggleTab(index) {
   activeTab.value = props.tabList[index];
+  Array.from(document.getElementsByClassName("tab-item")).forEach((element) =>
+    element.classList.remove("tab-active")
+  );
+  document
+    .querySelector(`.tab-item:nth-child(${index + 1})`)
+    .classList.add("tab-active");
 }
 </script>
 
@@ -40,7 +46,11 @@ function toggleTab(index) {
 .tab-item {
   cursor: pointer;
   height: 29px;
-  border-bottom: 3px solid $white;
+  border-bottom: 3px solid transparent;
   color: $white;
+}
+
+.tab-active {
+  border-bottom: 3px solid $white;
 }
 </style>

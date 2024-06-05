@@ -36,28 +36,27 @@
   .home__content {
     align-items: end;
     justify-content: space-between;
-    width: calc(100% - 165px * 2);
-    height: calc(100% - 128px * 2);
-    padding: 128px 165px;
+    max-width: 1110px;
+    max-height: 632px;
     @include respondTo("tablet") {
-      width: calc(100% - 40px * 2);
-      height: calc(100% - 128px * 2);
-      padding: 128px 40px;
+      max-width: 688px;
+      max-height: 672px;
     }
     @include respondTo("phone") {
-      width: calc(100% - 24px * 2);
-      height: calc(100% - 24px * 2);
-      padding: 24px;
+      max-width: 327px;
+      height: 676px;
     }
   }
 }
 
 .hero {
   max-width: 540px;
+  width: 100%;
 }
 
 .explore-btn {
   position: relative;
+  transform: translate(-88px, -88px);
   width: 272px;
   height: 272px;
   text-align: center;
@@ -65,7 +64,11 @@
   border-radius: 50%;
   color: $very-dark-navy;
   background-color: $white;
+  @include respondTo("tablet") {
+    transform: translate(0, 0);
+  }
   @include respondTo("phone") {
+    transform: translate(0, 0);
     width: 144px;
     height: 144px;
     line-height: 144px;
@@ -105,11 +108,13 @@
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      width: calc(100% - 40px * 2);
-      height: calc(100% - 20px * 2);
-      padding: 20px 40px;
+      max-width: 688px;
+      max-height: 900px;
       .hero {
         text-align: center;
+      }
+      .explore-btn {
+        transform: translate(0, 0);
       }
     }
   }
