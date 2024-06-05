@@ -21,6 +21,12 @@
 <style lang="scss" scoped>
 #home {
   background-image: url("@/assets/home/background-home-desktop.jpg");
+  @include respondTo("tablet") {
+    background-image: url("@/assets/home/background-home-tablet.jpg");
+  }
+  @include respondTo("phone") {
+    background-image: url("@/assets/home/background-home-mobile.jpg");
+  }
 }
 
 .home__container {
@@ -33,6 +39,16 @@
     width: calc(100% - 165px * 2);
     height: calc(100% - 128px * 2);
     padding: 128px 165px;
+    @include respondTo("tablet") {
+      width: calc(100% - 40px * 2);
+      height: calc(100% - 128px * 2);
+      padding: 128px 40px;
+    }
+    @include respondTo("phone") {
+      width: calc(100% - 24px * 2);
+      height: calc(100% - 24px * 2);
+      padding: 24px;
+    }
   }
 }
 
@@ -49,6 +65,11 @@
   border-radius: 50%;
   color: $very-dark-navy;
   background-color: $white;
+  @include respondTo("phone") {
+    width: 144px;
+    height: 144px;
+    line-height: 144px;
+  }
 }
 
 .explore-btn::before {
@@ -68,6 +89,12 @@
   left: -88px;
   bottom: -88px;
   right: -88px;
+  @include respondTo("phone") {
+    top: -44px;
+    left: -44px;
+    bottom: -44px;
+    right: -44px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -85,43 +112,6 @@
         text-align: center;
       }
     }
-  }
-}
-
-@media screen and (max-width: 850px) {
-  #home {
-    background-image: url("@/assets/home/background-home-tablet.jpg");
-  }
-  .home__container {
-    .home__content {
-      width: calc(100% - 40px * 2);
-      height: calc(100% - 128px * 2);
-      padding: 128px 40px;
-    }
-  }
-}
-
-@media screen and (max-width: 750px) {
-  #home {
-    background-image: url("@/assets/home/background-home-mobile.jpg");
-  }
-  .home__container {
-    .home__content {
-      width: calc(100% - 24px * 2);
-      height: calc(100% - 24px * 2);
-      padding: 24px;
-    }
-  }
-  .explore-btn {
-    width: 144px;
-    height: 144px;
-    line-height: 144px;
-  }
-  .explore-btn:hover::before {
-    top: -44px;
-    left: -44px;
-    bottom: -44px;
-    right: -44px;
   }
 }
 </style>

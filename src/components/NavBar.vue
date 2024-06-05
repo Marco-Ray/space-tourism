@@ -77,6 +77,13 @@ function toggleMobileMenu() {
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
+  @include respondTo("tablet") {
+    margin-top: 0;
+  }
+  @include respondTo("phone") {
+    padding: 24px;
+    width: calc(100vw - 48px);
+  }
 }
 
 .logo {
@@ -84,6 +91,14 @@ function toggleMobileMenu() {
   height: 48px;
   margin: 0 64px;
   z-index: 99;
+  @include respondTo("tablet") {
+    margin: 0 40px;
+  }
+  @include respondTo("phone") {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
 }
 
 .deco {
@@ -103,11 +118,27 @@ function toggleMobileMenu() {
   width: 50%;
   background-color: rgba($white, 5%);
   backdrop-filter: blur(80px);
+  @include respondTo("tablet") {
+    display: flex;
+    min-width: 600px;
+  }
+  @include respondTo("phone") {
+    min-width: 0;
+    background-color: transparent;
+    backdrop-filter: none;
+    justify-content: end;
+    .nav-state {
+      display: none;
+    }
+  }
 }
 
 #mobile-menu-btn {
   display: none;
   z-index: 99;
+  @include respondTo("phone") {
+    display: block;
+  }
 }
 
 .mobile-menu {
@@ -126,6 +157,9 @@ function toggleMobileMenu() {
   .nav-state:nth-child(1) {
     margin-top: 133px;
   }
+  @include respondTo("phone") {
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -134,43 +168,4 @@ function toggleMobileMenu() {
   }
 }
 
-@media screen and (max-width: 850px) {
-  #nav-bar {
-    margin-top: 0;
-  }
-  .logo {
-    margin: 0 40px;
-  }
-  .nav-container {
-    display: flex;
-    min-width: 600px;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  #nav-bar {
-    padding: 24px;
-    width: calc(100vw - 48px);
-  }
-  .nav-container {
-    min-width: 0;
-    background-color: transparent;
-    backdrop-filter: none;
-    justify-content: end;
-    .nav-state {
-      display: none;
-    }
-  }
-  .logo {
-    width: 40px;
-    height: 40px;
-    margin: 0;
-  }
-  #mobile-menu-btn {
-    display: block;
-  }
-  .mobile-menu {
-    display: flex;
-  }
-}
 </style>
