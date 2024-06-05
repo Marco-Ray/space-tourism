@@ -1,5 +1,9 @@
 <template>
-  <router-link :to="{name: props.menu.toLowerCase()}" class="nav-state" activeClass="active">
+  <router-link
+    :to="{ name: props.menu.toLowerCase() }"
+    class="nav-state"
+    activeClass="active"
+  >
     {{ props.index.length === 2 ? props.index : "0" + props.index }}
     {{ props.menu }}
   </router-link>
@@ -30,35 +34,31 @@ const props = defineProps({
   align-items: center;
   height: 96px;
   border-bottom: 3px solid transparent;
-}
-.nav-state:hover {
-  border-bottom: 3px solid $light-blue;
-}
-.active {
-  border-bottom: 3px solid $white;
-}
-.nav-state.active:hover {
-  border-bottom: 3px solid $white;
-}
-
-@media screen and (max-width: 750px) {
-  .nav-state {
-    justify-content: center;
+  @include respondTo("phone") {
     align-items: start;
     width: calc(100% - 3px);
     height: 19px;
     border-bottom: none;
     border-right: 3px solid transparent;
   }
-  .nav-state:hover {
+}
+.nav-state:hover {
+  border-bottom: 3px solid $light-blue;
+  @include respondTo("phone") {
     border-bottom: none;
     border-right: 3px solid $light-blue;
   }
-  .active {
+}
+.active {
+  border-bottom: 3px solid $white;
+  @include respondTo("phone") {
     border-bottom: none;
     border-right: 3px solid $white;
   }
-  .nav-state.active:hover {
+}
+.nav-state.active:hover {
+  border-bottom: 3px solid $white;
+  @include respondTo("phone") {
     border-bottom: none;
     border-right: 3px solid $white;
   }

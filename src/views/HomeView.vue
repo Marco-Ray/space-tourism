@@ -30,6 +30,8 @@
   .home__content {
     align-items: end;
     justify-content: space-between;
+    width: calc(100% - 165px * 2);
+    height: calc(100% - 128px * 2);
     padding: 128px 165px;
   }
 }
@@ -50,19 +52,22 @@
 }
 
 .explore-btn::before {
-    content: "";
-    position: absolute;
-    top: -88px;
-    left: -88px;
-    bottom: -88px;
-    right: -88px;
-    border-radius: 50%;
-    background-color: rgba($white, 10%);
-    opacity: 0;
-  }
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 50%;
+  background-color: rgba($white, 10%);
+  transition: all 0.2s ease-in;
+}
 
 .explore-btn:hover::before {
-  opacity: 1;
+  top: -88px;
+  left: -88px;
+  bottom: -88px;
+  right: -88px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -71,7 +76,10 @@
     .home__content {
       height: 100%;
       flex-direction: column;
+      justify-content: space-around;
       align-items: center;
+      width: calc(100% - 40px * 2);
+      height: calc(100% - 20px * 2);
       padding: 20px 40px;
       .hero {
         text-align: center;
@@ -86,6 +94,8 @@
   }
   .home__container {
     .home__content {
+      width: calc(100% - 40px * 2);
+      height: calc(100% - 128px * 2);
       padding: 128px 40px;
     }
   }
@@ -94,6 +104,24 @@
 @media screen and (max-width: 750px) {
   #home {
     background-image: url("@/assets/home/background-home-mobile.jpg");
+  }
+  .home__container {
+    .home__content {
+      width: calc(100% - 24px * 2);
+      height: calc(100% - 24px * 2);
+      padding: 24px;
+    }
+  }
+  .explore-btn {
+    width: 144px;
+    height: 144px;
+    line-height: 144px;
+  }
+  .explore-btn:hover::before {
+    top: -44px;
+    left: -44px;
+    bottom: -44px;
+    right: -44px;
   }
 }
 </style>
