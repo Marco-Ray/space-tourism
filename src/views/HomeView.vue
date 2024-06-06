@@ -45,6 +45,26 @@
     @include respondTo("phone") {
       max-width: 327px;
       height: 676px;
+      width: calc(100% - 24px * 2) !important;
+      margin: 24px;
+    }
+  }
+  @include respondTo("tabletPro") {
+    justify-content: space-between;
+    .home__content {
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 688px;
+      max-height: 900px;
+      .hero {
+        text-align: center;
+        gap: 24px;
+      }
+      .explore-btn {
+        transform: translate(0, 0);
+      }
     }
   }
 }
@@ -97,26 +117,6 @@
     left: -44px;
     bottom: -44px;
     right: -44px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .home__container {
-    justify-content: space-between;
-    .home__content {
-      height: 100%;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      max-width: 688px;
-      max-height: 900px;
-      .hero {
-        text-align: center;
-      }
-      .explore-btn {
-        transform: translate(0, 0);
-      }
-    }
   }
 }
 </style>

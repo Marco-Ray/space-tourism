@@ -1,19 +1,17 @@
 <template>
-  <div id="crew" class="view">Crew</div>
+  <div id="crew" class="view">
+    <div class="content__container crew__container">
+      <div class="content crew__content"></div>
+    </div>
+  </div>
 </template>
 <style lang="scss" scoped>
 #crew {
   background-image: url("@/assets/crew/background-crew-desktop.jpg");
-}
-
-@media screen and (max-width: 850px) {
-  #crew {
+  @include respondTo("tablet") {
     background-image: url("@/assets/crew/background-crew-tablet.jpg");
   }
-}
-
-@media screen and (max-width: 750px) {
-  #crew {
+  @include respondTo("phone") {
     background-image: url("@/assets/crew/background-crew-mobile.jpg");
   }
 }

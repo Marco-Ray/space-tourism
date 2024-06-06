@@ -15,11 +15,14 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 // eslint-disable-next-line no-undef
 const props = defineProps({
   tabList: Array,
 });
+
+// eslint-disable-next-line no-undef
+const emits = defineEmits(["selectedPlanet"]);
 
 const activeTab = ref(props.tabList[0]);
 const activeTabList = computed(() => {
@@ -28,6 +31,7 @@ const activeTabList = computed(() => {
 
 function toggleTab(index) {
   activeTab.value = props.tabList[index];
+  emits("selectedPlanet", activeTab.value);
   Array.from(document.getElementsByClassName("tab-item")).forEach((element) =>
     element.classList.remove("tab-active")
   );
@@ -35,22 +39,28 @@ function toggleTab(index) {
     .querySelector(`.tab-item:nth-child(${index + 1})`)
     .classList.add("tab-active");
 }
+
+onMounted(() => {
+  toggleTab(0);
+});
 </script>
 
 <style lang="scss" scoped>
 .tabs {
   display: flex;
   gap: 32px;
+  margin-bottom: 40px;
 }
 
 .tab-item {
   cursor: pointer;
   height: 29px;
   border-bottom: 3px solid transparent;
-  color: $white;
+  color: $light-blue;
 }
 
 .tab-active {
+  color: $white;
   border-bottom: 3px solid $white;
 }
 </style>
