@@ -59,8 +59,12 @@ onMounted(() => {
   color: $light-blue;
 }
 
+.tab-item:hover {
+  border-bottom: 3px solid rgba($white, 50%);
+}
+
 .tab-active {
   color: $white;
-  border-bottom: 3px solid $white;
+  border-bottom: 3px solid $white !important;
 }
 </style>
