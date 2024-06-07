@@ -12,7 +12,12 @@
             world experience!
           </div>
         </div>
-        <div class="btn explore-btn heading-S">EXPLORE</div>
+        <div
+          class="btn explore-btn heading-S"
+          @click="$router.push({ name: 'destination' })"
+        >
+          EXPLORE
+        </div>
       </div>
     </div>
   </div>
