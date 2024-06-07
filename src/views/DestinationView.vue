@@ -154,11 +154,6 @@ function selectedPlanet(planetName) {
       padding-top: 40px;
       height: calc(100% - 40px) !important;
     }
-    @include respondTo("tablet") {
-      max-width: 688px;
-      max-height: 848px;
-      margin: auto auto !important;
-    }
     @include respondTo("phone") {
       max-width: 327px;
       max-height: 744px;
