@@ -141,9 +141,9 @@ function selectedPlanet(planetName) {
   .destination__content {
     flex-direction: column;
     align-items: start;
-    max-width: calc(100% - calc(64px * 2 + 48px) * 2);
+    max-width: calc(100% - 165px * 2);
     max-height: 792px;
-    margin: auto calc(64px * 2 + 48px) !important;
+    margin: auto 165px !important;
     padding-top: 48px;
     height: calc(100% - 48px) !important;
     gap: 24px;
