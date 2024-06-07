@@ -61,10 +61,14 @@ onMounted(() => {
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background-color: #979797;
+      background-color: $white;
+      opacity: 17%;
       text-align: center;
       &.active {
-        background-color: $white;
+        opacity: 1 !important;
+      }
+      &:hover {
+        opacity: 50%;
       }
       @include respondTo("tabletPro") {
         width: 10px;
@@ -82,6 +86,9 @@ onMounted(() => {
       &.active {
         background-color: $white;
         color: $very-dark-navy;
+      }
+      &:hover {
+        border: 1px solid $white;
       }
       @include respondTo("tabletPro") {
         width: 56px;

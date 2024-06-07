@@ -165,6 +165,7 @@ const personInfo = computed(() => {
       }
       .person__description {
         color: $light-blue;
+        overflow-y: auto;
       }
     }
   }
@@ -176,7 +177,7 @@ const personInfo = computed(() => {
       .person__info {
         align-items: center;
         max-width: 512px;
-        height: calc(100% - 100px);
+        height: calc(100% - 50px);
         text-align: center;
       }
     }
